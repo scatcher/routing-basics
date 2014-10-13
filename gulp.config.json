@@ -1,0 +1,76 @@
+{
+    "client": "./app/",
+    "index": "./app/index.html",
+    "htmltemplates": [
+        "./app/**/*.html",
+        "!./app/index.html"
+    ],
+    "projectcss": [
+        "./app/styles/**/*.css",
+        "!./app/styles/**/bootstrap.css",
+        "!./app/styles/**/bower.css"
+    ],
+    "projectless": "./app/styles/less/*.less",
+    "projectjs": [
+        "./app/**/*.js",
+        "!./app/**/*.spec.js",
+        "!./app/**/*.mock.js"
+    ],
+    "specs": [
+        "./test/**/*.spec.js",
+        "./app/**/*.spec.js"
+    ],
+    "fonts": [
+        "./bower_components/font-awesome/fonts/**/*.*"
+    ],
+    "images": [
+        "./app/images/**/*"
+    ],
+    "build": "./dist/",
+    "report": "./report/",
+    "docs": "./docs/",
+    "offlinexml": [],
+    "cdnjs": [
+        "./bower_components/jquery/dist/jquery.js",
+        "./bower_components/angular/angular.js",
+        "./bower_components/jquery-ui/jquery-ui.js",
+        "./bower_components/angular-sanitize/angular-sanitize.js",
+        "./bower_components/angular-animate/angular-animate.js",
+        "./bower_components/angular-touch/angular-touch.js"
+    ],
+    "devjs": [
+        "./bower_components/chance/chance.js",
+        "./test/mocks/**/*.js",
+        "./bower_components/angular-mocks/angular-mocks.js",
+        "./bower_components/angular-point/test/mock/apMockBackend.js"
+    ],
+    "distjs": [
+        "./app/scripts/app.module.js"
+    ],
+    "modules": [
+        "./bower_components/angular-point/dist/angular-point.js",
+        "./bower_components/angular-point-modal/dist/apModalService.js",
+        "./bower_components/angular-point-group-manager/dist/apGroupManager.js",
+        "./bower_components/angular-point-form-control/dist/apInputControl.js",
+        "./bower_components/angular-point-offline-generator/dist/ap-offline-generator.js",
+        "./bower_components/angular-point-sync/dist/angular-point-sync.js"
+    ],
+    "vendorjs": [
+        "./bower_components/lodash/dist/lodash.js",
+        "./bower_components/firebase/firebase.js",
+        "./bower_components/angularfire/dist/angularfire.js",
+        "./bower_components/ngFx/dist/ngFx.js",
+        "./bower_components/angular-ui-router/release/angular-ui-router.js",
+        "./bower_components/angular-bootstrap/ui-bootstrap.js",
+        "./bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+        "./bower_components/angular-toastr/dist/angular-toastr.js",
+        "./bower_components/angular-filter/dist/angular-filter.js"
+    ],
+    "vendorcss": [
+        "./bower_components/angular-toastr/dist/angular-toastr.css",
+        "./bower_components/angular-loading-bar/build/loading-bar.css",
+        "./bower_components/font-awesome/css/font-awesome.min.css",
+        "./bower_components/bootstrap/dist/css/bootstrap.min.css",
+        "./bower_components/bootstrap/dist/css/bootstrap-theme.css"
+    ]
+}
