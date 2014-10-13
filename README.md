@@ -9,9 +9,13 @@ Install the required tools
 [Install NodeJS](http://nodejs.org/): 
 Node provides the framework for all other project components.
 
-Open terminal and install [Grunt](http://gruntjs.com/):
+[Install Git](http://git-scm.com/): 
+Open source version control system.
 
-    npm install -g grunt-cli
+Open terminal and install [Gulp](http://gulpjs.com/):
+
+    npm install --global gulp
+    
 Next install [Bower](http://bower.io/), our package manager:
 
     npm install -g bower
@@ -20,7 +24,7 @@ Cloning the Repository
 ---------
 Navigate to the local folder on your computer where the app will reside and clone the repo using terminal:
 
-    git clone https://github.com/scatcher/codechallenge_20140929.git
+    git clone https://github.com/scatcher/routing-basics.git
 
 Installing Dependencies
 ---------
@@ -34,9 +38,9 @@ Install project dependencies (gets everything identified in bower.json)
 
 Post-Setup
 ---------
-To see your code in the browser using grunt
+To see your code in the browser using gulp
 
-    grunt serve
+    gulp serve
     
 
 Update our dependencies
@@ -48,22 +52,7 @@ We can either update all dependencies
 or update a specific dependency
 
     bower update PackageName
-    
-
-Run unit tests
----------
-Run a single unit test
-
-    grunt test
        
-or run continous tests whenever a file is changed
-
-    grunt autotest
-    
-or to debug a test
-
-    grunt debugtest
-    
       
 Code Style
 ---------
