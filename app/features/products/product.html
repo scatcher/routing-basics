@@ -1,5 +1,5 @@
 <div class="container">
-    <fieldset>
+    <fieldset ng-disabled="state.formDisabled">
 
         <legend>{{ state.mode }} Product Form</legend>
 
@@ -30,6 +30,7 @@
                     </div>
                 </div>
 
+
                 <!--====================PRODUCT COLOR======================-->
                 <div class="col-sm-4" ng-form="formColor">
                     <div class="form-group">
@@ -39,6 +40,8 @@
                                 data-ng-options="color for color in colors"></select>
                     </div>
                 </div>
+
+
             </div>
 
             <!--====================PRODUCT DESCRIPTION======================-->
@@ -55,8 +58,9 @@
             <div class="form-group">
                 <a class="btn btn-primary"
                    ng-click="saveProduct(product)"
-                   ng-disabled="productForm.$invalid">Save</a>
-                <a class="btn btn-default" ui-sref="home">Close</a>
+                   ng-disabled="productForm.$invalid"
+                   ng-show="state.showSave">Save</a>
+                <a class="btn btn-default" ui-sref="products.list">Close</a>
                 <a class="btn btn-danger pull-right"
                    ng-click="deleteProduct(product)"
                    ng-show="state.showDelete">

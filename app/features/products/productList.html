@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="panel panel-primary">
-        <div class="panel-heading">Products
+        <div class="panel-heading"><i class="fa fa-twitch fa-lg"></i> Some Really Important Products
             <!--<form class="pull-right" role="search">-->
             <!--<input type="text" class="form-control input-sm" placeholder="Filter"-->
             <!--ng-model="state.filterText">-->
@@ -25,11 +25,13 @@
                 <td>{{ product.description }}</td>
                 <td style="color:{{ product.color }}">{{ product.color }}</td>
                 <td>
-                    <a href ui-sref="product.edit({key: id})">
+                    <a href ui-sref="products.edit({key: id})">
                         <i class="fa fa-edit"></i> Edit</a>
                 </td>
             </tr>
             </tbody>
         </table>
     </div>
+
+
 </div>

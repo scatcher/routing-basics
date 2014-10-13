@@ -8,7 +8,6 @@
     <!-- build:css styles/vendor.css -->
     <!-- inject-vendorcss:css -->
     <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css">
-    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
@@ -27,7 +26,7 @@
 <div ng-include="'features/navbar/navbar.html'"></div>
 
 
-<div ui-view class="fx-fade-left fx-speed-300"></div>
+<div ui-view class="fx-fade-up fx-speed-300"></div>
 
 
 <!-- LOCAL RESOURCES THAT ARE REPLACED WITH GOOGLE CDN LINKS AT BUILD -->
@@ -57,14 +56,14 @@
 
 <!-- inject-projectjs:js -->
 <script src="scripts/app.js"></script>
-<script src="scripts/services/presenceService.js"></script>
 <script src="scripts/services/dataService.js"></script>
 <script src="scripts/directives/shakeCounterDirective.js"></script>
+<script src="scripts/directives/scrollGlueDirective.js"></script>
+<script src="features/products/productListCtrl.js"></script>
 <script src="features/products/editProductCtrl.js"></script>
 <script src="features/products/createProductCtrl.js"></script>
 <script src="features/navbar/navbarCtrl.js"></script>
-<script src="features/main/mainCtrl.js"></script>
-<script src="features/about/aboutCtrl.js"></script>
+<script src="features/home/homeCtrl.js"></script>
 <script src="scripts/routes.js"></script>
 <script src="scripts/constants.js"></script>
 <!-- endinject -->

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name routingDemo.controller:MainCtrl
+ * @name routingDemo.controller:productListCtrl
  * @description
- * # MainCtrl
+ * # productListCtrl
  * Controller of the routingDemo
  */
 angular.module('routingDemo')
-    .controller('mainCtrl', function ($scope, products) {
+    .controller('productListCtrl', function ($scope, products) {
 
         var state = {
             filterText: ''

@@ -6,19 +6,19 @@
         .controller('navbarCtrl', navbarCtrl);
 
     /* @ngInject */
-    function navbarCtrl($scope, FIREBASE_URI, $timeout) {
+    function navbarCtrl($scope, FIREBASE_URI, $timeout, dataService) {
         $scope.state = {
             title: 'Routing Basics',
             userCount: '?'
         };
 
         $scope.navOptions = [
-            {label: 'Products', route: 'home', icon: 'fa-home'},
-            {label: 'Create', route: 'product.create', icon: 'fa-plus'},
-            {label: 'About', route: 'about', icon: 'fa fa-at'}
+            {label: 'Home', route: 'home', icon: 'fa fa-at'},
+            {label: 'Products', route: 'products.list', icon: 'fa-home'},
+            {label: 'New Product', route: 'products.create', icon: 'fa-plus'}
         ];
 
-        /***** Ignore this **********/
+        /***** Ignore this... just fun to see who's on **********/
 
         var listRef = new Firebase(FIREBASE_URI + 'presence/');
         var userRef = listRef.push();
@@ -29,7 +29,7 @@
             if (snap.val()) {
                 userRef.set({
                     connected: new Date().getTime(),
-                    browser: navigator.userAgent
+                    browser: dataService.getUserNavigator()
                 });
                 // Remove ourselves when we disconnect.
                 userRef.onDisconnect().remove();
@@ -43,7 +43,6 @@
                 console.log("Online " + snap.numChildren());
             }, 10);
         });
-
 
     }
 })();

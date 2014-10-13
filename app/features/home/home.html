@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="alert alert-info"><i class="fa fa-info-circle"></i> This is just a simple demo of routing in AngularJS.
+    </div>
+
+    <hr class="hr-sm"/>
+
+    <div class="row">
+        <!--<div class="col-xs-6">-->
+
+
+        <!--</div>-->
+        <div class="col-xs-12">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-comments"></i> Chat While You Wait</h3>
+                </div>
+                <div class="chat" scroll-glue>
+                    <table class="table table-striped small">
+                        <tbody>
+                        <tr ng-repeat="(messageId, message) in messages track by messageId">
+                            <td title="User Agent: {{ message.browser }}">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <strong>{{message.user}}</strong> (<em>{{ message.datetime | date:'short'}}</em>)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <p>{{message.message}}</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer small">
+                    <div class="form-group">
+                        <label>Your name:</label>
+                        <input class="form-control input-sm" ng-model="state.userName"
+                               placeholder="Add your name...">
+                    </div>
+                    <div class="form-group">
+                        <label>Your message:</label>
+                        <textarea class="form-control input-sm" ng-model="state.message"
+                                  placeholder="Type your message here..."></textarea>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" ng-click="addMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+

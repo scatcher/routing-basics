@@ -6,33 +6,40 @@ angular.module('routingDemo')
 
         // For any unmatched url, redirect to /
         $urlRouterProvider
+            .when('/products', '/products/list')
             //Default Route
             .otherwise('/');
 
         $stateProvider
-        /**Empty Route**/
+            /** Default Route */
             .state('home', {
                 url: '/',
-                templateUrl: 'features/main/main.html',
-                controller: 'mainCtrl',
-                resolve: {
-                    products: function (dataService) {
-                        return dataService.products;
-                    }
-                }
+                templateUrl: 'features/home/home.html',
+                controller: 'homeCtrl'
             })
 
-            .state('product', {
-                url: '/product',
+
+            .state('products', {
+                url: '/products',
                 abstract: true,
-                template: '<div ui-view></div>',
+                template: '<div ui-view class="fx-fade-up fx-speed-300"></div>',
                 resolve: {
                     colors: function (dataService) {
                         return dataService.getColors();
                     }
                 }
             })
-            .state('product.create', {
+            .state('products.list', {
+                url: '/list',
+                templateUrl: 'features/products/productList.html',
+                controller: 'productListCtrl',
+                resolve: {
+                    products: function (dataService) {
+                        return dataService.products;
+                    }
+                }
+            })
+            .state('products.create', {
                 url: '/create',
                 templateUrl: 'features/products/product.html',
                 controller: 'createProductCtrl',
@@ -46,7 +53,7 @@ angular.module('routingDemo')
                     }
                 }
             })
-            .state('product.edit', {
+            .state('products.edit', {
                 url: '/edit/:key',
                 templateUrl: 'features/products/product.html',
                 controller: 'editProductCtrl',
@@ -55,13 +62,8 @@ angular.module('routingDemo')
                         return dataService.getProduct($stateParams.key);
                     }
                 }
-            })
+            });
 
 
-            .state('about', {
-                url: '/about',
-                templateUrl: 'features/about/about.html',
-                controller: 'aboutCtrl'
-            })
 
     });

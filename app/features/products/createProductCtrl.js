@@ -11,7 +11,10 @@
         $scope.saveProduct = saveProduct;
         $scope.product = product;
         $scope.state = {
-            mode: 'New'
+            formDisabled: false,
+            mode: 'New',
+            showDelete: false,
+            showSave: true
         };
 
         ////////////////
@@ -19,7 +22,7 @@
         function saveProduct(product) {
             dataService.addProduct(product)
                 .then(function () {
-                    $state.go('home');
+                    $state.go('products.list');
                 });
         }
     }
