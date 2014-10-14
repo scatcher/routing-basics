@@ -4,7 +4,7 @@ routing-basics_20141013
 Demo for AngularJS Study group discussion on routing.
 
 
-Install the required tools
+Install the required tools if not already available
 ---------
 [Install NodeJS](http://nodejs.org/): 
 Node provides the framework for all other project components.
@@ -41,17 +41,6 @@ Post-Setup
 To see your code in the browser using gulp
 
     gulp serve
-    
-
-Update our dependencies
----------
-We can either update all dependencies
-
-    bower update
-    
-or update a specific dependency
-
-    bower update PackageName
        
       
 Code Style
