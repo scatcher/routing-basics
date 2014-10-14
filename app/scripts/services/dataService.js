@@ -30,7 +30,7 @@ angular.module('routingDemo')
         function getColors() {
             var deferred = $q.defer();
             $timeout(function () {
-                deferred.resolve(['Blue', 'Green', 'Purple', 'Red', 'Yellow']);
+                deferred.resolve(['Black', 'Blue', 'Green', 'Orange', 'Pink', 'Purple', 'Red', 'Yellow']);
             }, 100);
             return deferred.promise;
         }
