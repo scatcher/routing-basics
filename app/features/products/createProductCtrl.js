@@ -17,8 +17,7 @@
             showSave: true
         };
 
-        ////////////////
-
+        /**=================PRIVATE======================**/
         function saveProduct(product) {
             dataService.addProduct(product)
                 .then(function () {

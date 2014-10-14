@@ -1,15 +1,7 @@
-'use strict';
+(function () {
+    'use strict';
 
-/**
- * @ngdoc overview
- * @name routingDemo
- * @description
- * # routingDemo
- *
- * Main module of the application.
- */
-angular
-    .module('routingDemo', [
+    angular.module('routingDemo', [
         //Angular Components
         'ngSanitize',
         'ngAnimate',
@@ -17,15 +9,12 @@ angular
         //Angular UI
         'ui.router',
 
-//    //Plugins
+        //Plugins
         'firebase',
         'ngFx',
-        'toastr',
-        'angular.filter'
-    ])
-    .config(function (toastrConfig) {
-        /** Set the default toast location */
-        toastrConfig.positionClass = 'toast-bottom-right';
+        'toastr'
+    ]);
 
-    });
+})();
+
 

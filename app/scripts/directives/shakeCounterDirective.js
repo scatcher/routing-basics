@@ -1,5 +1,11 @@
-angular.module('routingDemo')
-    .directive('shakeCounter', function ($timeout) {
+(function () {
+    'use strict';
+
+    angular
+        .module('routingDemo')
+        .directive('shakeCounter', shakeCounter);
+
+    function shakeCounter($timeout) {
         return {
             restrict: "A",
             replace: false,
@@ -17,4 +23,6 @@ angular.module('routingDemo')
                 });
             }
         }
-    });
+    }
+
+})();

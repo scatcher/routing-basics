@@ -7,18 +7,22 @@
 
     /* @ngInject */
     function navbarCtrl($scope, FIREBASE_URI, $timeout, dataService) {
+        /** Navbar state */
         $scope.state = {
             title: 'Routing Basics',
             userCount: '?'
         };
 
+        /** These are the nav choices that appear in the top of the navbar */
         $scope.navOptions = [
             {label: 'Home', route: 'home', icon: 'fa fa-at'},
             {label: 'Products', route: 'products.list', icon: 'fa-home'},
             {label: 'New Product', route: 'products.create', icon: 'fa-plus'}
         ];
 
-        /***** Ignore this... just fun to see who's on **********/
+
+
+        /***========= Ignore this... just fun to see who's on ==========******/
 
         var listRef = new Firebase(FIREBASE_URI + 'presence/');
         var userRef = listRef.push();

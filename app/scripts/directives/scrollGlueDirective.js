@@ -1,7 +1,11 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('routingDemo')
-    .directive('scrollGlue', function () {
+    angular
+        .module('routingDemo')
+        .directive('scrollGlue', scrollGlue);
+
+    function scrollGlue() {
         return {
             priority: 1,
             require: ['?ngModel'],
@@ -43,4 +47,7 @@ angular.module('routingDemo')
 
             }
         };
-    });
+    }
+
+})();
+

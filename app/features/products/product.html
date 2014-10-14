@@ -54,22 +54,31 @@
             </div>
 
 
-            <!--====================FORM CONTROLS======================-->
-            <div class="form-group">
-                <a class="btn btn-primary"
-                   ng-click="saveProduct(product)"
-                   ng-disabled="productForm.$invalid"
-                   ng-show="state.showSave">Save</a>
-                <a class="btn btn-default" ui-sref="products.list">Close</a>
-                <a class="btn btn-danger pull-right"
-                   ng-click="deleteProduct(product)"
-                   ng-show="state.showDelete">
-                    <i class="fa fa-trash"></i>
-                </a>
-            </div>
 
 
         </form>
 
     </fieldset>
+
+    <!--====================FORM CONTROLS======================-->
+    <div class="form-group">
+
+        <!--=============== Save =================-->
+        <a class="btn btn-primary"
+           ng-click="saveProduct(product)"
+           ng-disabled="productForm.$invalid"
+           ng-show="state.showSave">Save</a>
+
+        <!--=============== Close =================-->
+        <a class="btn btn-default" ui-sref="products.list">Close</a>
+
+        <!--=============== Delete =================-->
+        <a class="btn btn-danger pull-right"
+           ng-click="deleteProduct(product)"
+           ng-show="state.showDelete">
+            <i class="fa fa-trash"></i>
+        </a>
+
+    </div>
+
 </div>

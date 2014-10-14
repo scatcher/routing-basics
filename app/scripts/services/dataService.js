@@ -1,7 +1,11 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('routingDemo')
-    .factory('dataService', function ($q, $firebase, toastr, $timeout, FIREBASE_URI) {
+    angular
+        .module('routingDemo')
+        .factory('dataService', dataServiceService);
+
+    function dataServiceService($q, $firebase, toastr, $timeout, FIREBASE_URI) {
 
         //Products
         var productsRef = new Firebase(FIREBASE_URI + "products");
@@ -27,6 +31,7 @@ angular.module('routingDemo')
                 })
         }
 
+        /** Simulate promise that resolves with an array of strings */
         function getColors() {
             var deferred = $q.defer();
             $timeout(function () {
@@ -39,7 +44,6 @@ angular.module('routingDemo')
             var productRef = new Firebase(FIREBASE_URI + "products/" + key);
             var productSync = $firebase(productRef);
             return productSync.$asObject();
-            //return dataService.products[key];
         }
 
         function deleteProduct(key) {
@@ -47,6 +51,10 @@ angular.module('routingDemo')
             return productRef.remove();
         }
 
+
+
+
+        /** Ignore, just helps cleanly display a the user's browser */
         function getUserNavigator() {
             var ua = navigator.userAgent, tem,
                 M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
@@ -64,5 +72,5 @@ angular.module('routingDemo')
 
         }
 
-    });
-
+    }
+})();

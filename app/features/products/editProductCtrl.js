@@ -18,7 +18,9 @@
             showSave: true
         };
 
-        ////////////////
+
+
+        /**=================PRIVATE======================**/
 
         function deleteProduct(product) {
             dataService.deleteProduct(product.$id);

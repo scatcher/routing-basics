@@ -12,6 +12,7 @@
             userName: ''
         };
         $scope.addMessage = addMessage;
+        $scope.getCurrentUrl = getCurrentUrl;
         var discussionRef = new Firebase(FIREBASE_URI + 'discussion').limit(20);
         $scope.messages = $firebase(discussionRef).$asObject();
 
@@ -30,6 +31,12 @@
                 browser: dataService.getUserNavigator()
             });
             $scope.state.message = '';
+        }
+
+        /** Simple helper for discussion that displays the local network address to join the demo */
+        function getCurrentUrl() {
+            var url = window.location.href;
+            return url.split('/#')[0];
         }
 
     }

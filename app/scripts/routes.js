@@ -1,8 +1,12 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('routingDemo')
+    angular
+        .module('routingDemo')
+        .config(routes);
 
-    .config(function ($stateProvider, $urlRouterProvider) {
+    /* @ngInject */
+    function routes($stateProvider, $urlRouterProvider) {
 
         // For any unmatched url, redirect to /
         $urlRouterProvider
@@ -11,7 +15,7 @@ angular.module('routingDemo')
             .otherwise('/');
 
         $stateProvider
-            /** Default Route */
+        /** Default Route */
             .state('home', {
                 url: '/',
                 templateUrl: 'features/home/home.html',
@@ -22,13 +26,16 @@ angular.module('routingDemo')
             .state('products', {
                 url: '/products',
                 abstract: true,
+                /** Using inline template, just creating a ui-view container for child states to be injected in */
                 template: '<div ui-view class="fx-fade-up fx-speed-300"></div>',
                 resolve: {
+                    /** All child states inherit "colors" and can optionally have it injected in their controllers */
                     colors: function (dataService) {
                         return dataService.getColors();
                     }
                 }
             })
+
             .state('products.list', {
                 url: '/list',
                 templateUrl: 'features/products/productList.html',
@@ -39,12 +46,14 @@ angular.module('routingDemo')
                     }
                 }
             })
+
             .state('products.create', {
                 url: '/create',
                 templateUrl: 'features/products/product.html',
                 controller: 'createProductCtrl',
                 resolve: {
                     product: function () {
+                        /** Resolve returns a sync response instead of resolving a promise */
                         return {
                             name: '',
                             price: 0,
@@ -53,6 +62,28 @@ angular.module('routingDemo')
                     }
                 }
             })
+
+            .state('products.display', {
+                url: '/display/:key',
+                templateUrl: 'features/products/product.html',
+                /** We can also specify the controller inline instead of referencing the name */
+                controller: function ($scope, product, colors) {
+                    $scope.product = product;
+                    $scope.colors = colors;
+                    $scope.state = {
+                        formDisabled: true,
+                        mode: 'Display',
+                        showDelete: false,
+                        showSave: false
+                    };
+                },
+                resolve: {
+                    product: function ($stateParams, dataService) {
+                        return dataService.getProduct($stateParams.key);
+                    }
+                }
+            })
+
             .state('products.edit', {
                 url: '/edit/:key',
                 templateUrl: 'features/products/product.html',
@@ -63,7 +94,9 @@ angular.module('routingDemo')
                     }
                 }
             });
+    }
 
 
+})();
 
-    });
+

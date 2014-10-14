@@ -1,21 +1,17 @@
-'use strict';
+(function () {
+    'use strict';
 
-/**
- * @ngdoc function
- * @name routingDemo.controller:productListCtrl
- * @description
- * # productListCtrl
- * Controller of the routingDemo
- */
-angular.module('routingDemo')
-    .controller('productListCtrl', function ($scope, products) {
+    angular
+        .module('routingDemo')
+        .controller('productListCtrl', productListCtrl);
 
-        var state = {
+    /* @ngInject */
+    function productListCtrl($scope, products) {
+        /** Expose to the view */
+        $scope.products = products;
+        $scope.state = {
             filterText: ''
         };
+    }
 
-        $scope.products = products;
-
-        $scope.state = state;
-        //$scope.teamsData = teamsData;
-    });
+})();
